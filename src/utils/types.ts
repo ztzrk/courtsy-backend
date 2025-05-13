@@ -1,4 +1,4 @@
-export interface IUser {
+export interface User {
     id?: string;
     email: string;
     password: string;
@@ -6,5 +6,9 @@ export interface IUser {
     phone?: string | null;
     role?: "USER" | "VENUE_OWNER" | "ADMIN";
 }
+export interface JwtPayload {
+    id: string;
+    role: "USER" | "VENUE_OWNER" | "ADMIN";
+}
 
-export type UserUpdate = Partial<Omit<IUser, "id">>;
+export type UserUpdate = Partial<Omit<User, "id">>;
